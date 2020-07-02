@@ -14,5 +14,6 @@ const generateColorList = num => {
 }
 
 export {
+    generateColor,
     generateColorList
 }

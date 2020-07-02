@@ -20,19 +20,22 @@ const timeFormat = (time, toSecond = true) => {
     }
 
     yyyy = date.getFullYear();
-    mm = numberLessThenTen(date.getMonth() + 1);
-    day = numberLessThenTen(date.getDate());
-    hr = numberLessThenTen(date.getHours());
-    min = numberLessThenTen(date.getMinutes());
-    s = numberLessThenTen(date.getSeconds());
+    mm = numberLessThanTen(date.getMonth() + 1);
+    day = numberLessThanTen(date.getDate());
+    hr = numberLessThanTen(date.getHours());
+    min = numberLessThanTen(date.getMinutes());
+    s = numberLessThanTen(date.getSeconds());
 
     return toSecond 
     ? yyyy + "/" + mm + "/" + day + "-" + hr + ":" + min + ":" + s
     : yyyy + "/" + mm + "/" + day + " " + hr + ":00-" + hr + ":59";
 };
-const numberLessThenTen = n => {
+const numberLessThanTen = n => {
     return (n < 10)
         ? "0" + n
         : n;
 };
-export default timeFormat;
+export {
+    timeFormat,
+    numberLessThanTen
+};

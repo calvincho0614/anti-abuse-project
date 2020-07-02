@@ -12,6 +12,9 @@ reactstrap: for layout adjustment <br><br>
 Runs the app in the development mode <br><br>
 Open [http://localhost:3000] to view it in the browser
 
+### `npm test`
+Launches the test in the watch mode <br><br>
+
 ### `npm run build`
 Builds the app for production to the `build` folder <br><br>
 Then, the app is ready to be deployed!

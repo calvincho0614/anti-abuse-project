@@ -1,8 +1,7 @@
 import React from 'react';
 
 const MyBlock = ({ render, title, backgroundColor }) => (
-    <div
-        style={
+    <div style={
             {
                 backgroundColor,
                 display: "flex",
