@@ -13,12 +13,13 @@ Runs the app in the development mode <br><br>
 Open [http://localhost:3000] to view it in the browser
 
 ### `npm test`
-Launches the test in the watch mode <br><br>
+Launches the test in the watch mode <br>
 
 ### `npm run build`
 Builds the app for production to the `build` folder <br><br>
-Then, the app is ready to be deployed!
+Then, the app is ready to be deployed
 
-# parameter observeByExactTime in App.js
-Set observeByExactTime to True -> observe the time interval <br><br>
-Set observeByExactTime to False -> observe the exact time <br><br>
+# Setup.js
+You can switch the value of observeByExactTime to determine the view mode of diagram<br>
+Set to True -> observe the time interval <br>
+Set to False -> observe the exact time <br>

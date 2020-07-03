@@ -2,8 +2,16 @@ import * as ProcessTime from './timeFormat';
 
 describe('Test Time Format', () => {
     
-    it('convert timestamp to readable time', () => {
+    it('convert timestamp to readable time (hourly interval)', () => {
         expect(ProcessTime.timeFormat(1591515739, false)).toBe("1970/01/19 18:00-18:59");
+    });
+
+    it('convert timestamp to readable time', () => {
+        expect(ProcessTime.timeFormat(1591515739, true)).toBe("1970/01/19-18:05:15");
+    });
+
+    it('check timestamp format', () => {
+        expect(ProcessTime.timeFormat("1591515739", false)).toBe(null);
     });
 
     it('convert timestamp within a readable time interval', () => {

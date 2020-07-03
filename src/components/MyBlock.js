@@ -1,7 +1,8 @@
 import React from 'react';
 
-const MyBlock = ({ render, title, backgroundColor }) => (
-    <div style={
+const MyBlock = ({ render = () => {}, title, backgroundColor }) => (
+    <div data-test="MyBlockComponent"
+        style={
             {
                 backgroundColor,
                 display: "flex",

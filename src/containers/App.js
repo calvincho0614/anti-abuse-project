@@ -3,14 +3,13 @@ import MyBootstrapTable from '../components/MyBootstrapTable.js';
 import MyDiagram from '../components/MyDiagram';
 import MyBlock from '../components/MyBlock';
 import MyIcon from '../components/MyIcon';
-import {data} from '../data_store/data';
+import {data, init_table_data, init_diagram_data} from '../data_store/data';
 import * as Processing from '../helper/processing';
-// Set observeByExactTime to True -> observe the time interval, False -> observe the exact time
-const observeByExactTime = false;
+import {observeByExactTime} from '../setup';
 
 function App() {
-  const [table_data, set_table_data] = useState([]);
-  const [diagram_data, set_diagram_data] = useState([]);
+  const [table_data, set_table_data] = useState(init_table_data);
+  const [diagram_data, set_diagram_data] = useState(init_diagram_data);
   const [loading_table, set_loading_table] = useState(false);
   const [loading_digagram, set_loading_digagram] = useState(false);
 
@@ -29,7 +28,7 @@ function App() {
       set_loading_table(true);
       //const data = await fetch('serverurl');
       Processing.processTableData(data).then(result =>{
-        console.log('table_data = ',result);
+        // console.log('table_data = ',result);
         set_table_data(result);
         // simulate loading time for 5 sec
         setTimeout(() => set_loading_table(false), 5000);
@@ -44,7 +43,7 @@ function App() {
       set_loading_digagram(true);
       //const data = await fetch('serverurl');
       Processing.processDiagramData(data, observeByExactTime).then(result => {
-        console.log('diagram_data = ',result);
+        // console.log('diagram_data = ',result);
         set_diagram_data(result);
         // simulate loading time for 1 sec
         setTimeout(() => set_loading_digagram(false), 1000); 
@@ -54,16 +53,16 @@ function App() {
     }
   };
   
-  return (<div className="App">
+  return (<div className="App" data-test="AppComponent">
     {
-    loading_table
-      ? <MyBlock backgroundColor="white" title="Table" render={renderTableLoading} />
-      : <MyBlock backgroundColor="white" title="Table" render={renderTable} />
+      loading_table
+        ? <MyBlock backgroundColor="white" title="Table" render={renderTableLoading} />
+        : <MyBlock backgroundColor="white" title="Table" render={renderTable} />
     }
     {
-    loading_digagram
-      ? <MyBlock backgroundColor="white" title="Diagram" render={renderDiagramLoading} />
-      : <MyBlock backgroundColor="white" title="Diagram" render={renderDiagram} />
+      loading_digagram
+        ? <MyBlock backgroundColor="white" title="Diagram" render={renderDiagramLoading} />
+        : <MyBlock backgroundColor="white" title="Diagram" render={renderDiagram} />
     }
   </div>);
 }

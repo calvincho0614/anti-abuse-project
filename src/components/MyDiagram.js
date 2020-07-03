@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Line} from 'react-chartjs-2';
 import {CardHeader, Card, Col, CardBody} from 'reactstrap';
 
-export default props => {
+const MyDiagram = props => {
     let userData = {},
         dtType = props.title,
         labels = [],
@@ -50,7 +51,8 @@ export default props => {
         <Card>
             <CardHeader>{dtType}</CardHeader>
             <CardBody>
-                <div className="chart-wrapper" style={{
+                <div data-test="MyDiagramComponent"
+                    className="chart-wrapper" style={{
                         'height' : '500px'
                     }}>
                     <Line data={userData} options={{
@@ -74,3 +76,17 @@ export default props => {
         </Card>
     </Col>);
 }
+
+MyDiagram.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        color: PropTypes.string.isRequired,
+        data: PropTypes.arrayOf(PropTypes.shape({
+            date: PropTypes.string.isRequired,
+            data: PropTypes.number.isRequired
+        })).isRequired,
+    })).isRequired,
+    date: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
+};
+
+export default MyDiagram;

@@ -140792,7 +140792,151 @@ const data = {
         }
     ]
 };
-
+const init_table_data = {
+  results: [{
+    "id": 0,
+    "Time": "N/A",
+    "WeeklyTime": "N/A",
+    "DailyTime": "N/A",
+    "HourlyTime": "N/A",
+    "WeeklyInternal": 0,
+    "WeeklyRecipients": 0,
+    "WeeklyEmails": 0,
+    "HourlyBCC": 0,
+    "WeeklyUndelivered": 0,
+    "DailyRecipients": 0,
+    "User level": 0,
+    "BannedNum": 0,
+    "Type": "ES",
+    "Blackhole": 0,
+    "DailyBCC": 0,
+    "WeeklyIncoming": 0,
+    "Reputation": 0,
+    "HourlyEmails": 0,
+    "WeeklySpam": 0,
+    "WeeklyBCC": 0,
+    "DailyEmails": 0,
+    "WeeklyBadInternal": 0,
+    "HourlyRecipients": 0,
+    "Trust": 0
+  }],
+  columns: [
+    {
+        dataField: 'Time',
+        text: 'Time',
+        sort: true
+    }, {
+        dataField: 'Type',
+        text: 'Type',
+        sort: true
+    }, {
+        dataField: 'WeeklyTime',
+        text: 'Weekly Time',
+        sort: true
+    }, {
+        dataField: 'WeeklyEmails',
+        text: 'Weekly Emails',
+        sort: true
+    }, {
+        dataField: 'WeeklyIncoming',
+        text: 'Weekly Incoming',
+        sort: true
+    }, {
+        dataField: 'WeeklyInternal',
+        text: 'Weekly Internal',
+        sort: true
+    }, {
+        dataField: 'WeeklyRecipients',
+        text: 'Weekly Recipients',
+        sort: true
+    }, {
+        dataField: 'WeeklyUndelivered',
+        text: 'Weekly Undelivered',
+        sort: true
+    }, {
+        dataField: 'WeeklyBCC',
+        text: 'WeeklyBCC',
+        sort: true
+    }, {
+        dataField: 'WeeklySpam',
+        text: 'Weekly Spam',
+        sort: true
+    }, {
+        dataField: 'WeeklyBadInternal',
+        text: 'Weekly Bad Internal',
+        sort: true
+    }, {
+        dataField: 'DailyTime',
+        text: 'Daily Time',
+        sort: true
+    }, {
+        dataField: 'DailyEmails',
+        text: 'Daily Emails',
+        sort: true
+    }, {
+        dataField: 'DailyRecipients',
+        text: 'Daily Recipients',
+        sort: true
+    }, {
+        dataField: 'DailyBCC',
+        text: 'Daily BCC',
+        sort: true
+    }, {
+        dataField: 'HourlyTime',
+        text: 'Hourly Time',
+        sort: true
+    }, {
+        dataField: 'HourlyEmails',
+        text: 'Hourly Emails',
+        sort: true
+    }, {
+        dataField: 'HourlyRecipients',
+        text: 'Hourly Recipients',
+        sort: true
+    }, {
+        dataField: 'HourlyBCC',
+        text: 'Hourly BCC',
+        sort: true
+    }, {
+        dataField: 'User level',
+        text: 'User level',
+        sort: true
+    }, {
+        dataField: 'BannedNum',
+        text: 'Banned Num',
+        sort: true
+    }, {
+        dataField: 'Blackhole',
+        text: 'Black hole',
+        sort: true
+    }, {
+        dataField: 'Reputation',
+        text: 'Reputation',
+        sort: true
+    }, {
+        dataField: 'Trust',
+        text: 'Trust',
+        sort: true
+    }
+  ],
+  defaultSorted: [
+    {
+      dataField: 'Time',
+      order: 'asc'
+    }
+  ]
+};
+const init_diagram_data = {
+  data: [
+    {name: "ESN", data: [{date: "1970/01/19 17:00-17:59", data: 0}, {date: "1970/01/19 18:00-18:59", data: 0}], color: "rgba(113,252,199,0.1)"},
+    {name: "ES", data: [{date: "1970/01/19 17:00-17:59", data: 0}, {date: "1970/01/19 18:00-18:59", data: 0}], color: "rgba(57,221,224,0.2)"},
+    {name: "B", data: [{date: "1970/01/19 17:00-17:59", data: 0}, {date: "1970/01/19 18:00-18:59", data: 0}], color: "rgba(75,80,166,0.6)"},
+    {name: "S", data: [{date: "1970/01/19 17:00-17:59", data: 0}, {date: "1970/01/19 18:00-18:59", data: 0}], color: "rgba(139,210,212,0.9)"}
+  ],
+  date: [ "1970/01/19 17:00-17:59", "1970/01/19 18:00-18:59" ]
+}
 export {
-    data
+    data,
+    init_table_data,
+    init_diagram_data
 };

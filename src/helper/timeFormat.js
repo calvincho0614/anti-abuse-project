@@ -11,12 +11,12 @@ const timeFormat = (time, toSecond = true) => {
         type = typeof(time);
 
     if (time === 'null' || !time) 
-        return 'N/A';
+        return null;
     
     if (type === 'number') { // timestamp
         date = new Date(time);
     } else {
-        return 'N/A';
+        return null;
     }
 
     yyyy = date.getFullYear();
